@@ -14,11 +14,25 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-
+/**
+ * Класс для чтения данных о сотрудниках из CSV файла.
+ * Обеспечивает маппинг строк в объекты типа Person.
+ */
 public class PersonService {
 
+    /**
+     * Формат даты в CSV файле.
+     */
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
+    /**
+     * Читает данные из CSV файла и возвращает список сотрудников.
+     *
+     * @param csvFilePath путь к файлу внутри ресурсов
+     * @param separator   разделитель полей в CSV
+     * @return список объектов Person
+     * @throws Exception если произошла ошибка при чтении файла
+     */
     public List<Person> readPeopleFromCsv(String csvFilePath, char separator) throws Exception {
         List<Person> people = new ArrayList<>();
 
